@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم إسبريسو</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <img src="logo.png" alt="مطعم إسبريسو" class="header-logo">
+<img src="logo2.png" alt="مطعم إسبريسو" class="header-logo2">
+    <h1 class="header-title">مطعم إسبريسو</h1>
+</header>
+
+    <div id="navbar">
+        <ul>
+            <li><a href="#section-1">بيتزا</a></li>
+            <li><a href="#section-2">شاورما</a></li>
+            <li><a href="#section-3">حووشي</a></li>
+            <li><a href="#section-4">جمبري</a></li>
+            <li><a href="#random-meal-scroll">اخترلي</a></li>
+            <li><a href="#recipes-section">وصفات</a></li>
+            <li><a href="#cart">الشيك</a></li>
+        </ul>
+    </div>
+    
+<section id="section-1" class="category-section">
+    <h2>بيتزا</h2>
+    <div class="search-bar">
+        <input type="text" id="search-1" placeholder="  ابحث عن البيتزا . . .">
+        <button id="search-btn-1">🔍</button>
+    </div>
+    <div class="product-scroll" id="category-1"> </div>
+</section>
+
+<section id="section-2" class="category-section">
+        <h2>شاورما</h2>
+
+        <div class="search-bar">
+            <input type="text" id="search-2" placeholder="   ابحث عن الشاورما . . .">
+            <button id="search-btn-2">🔍</button>
+        </div>
+        <div class="product-scroll" id="category-2"></div>
+</section>
+
+<section id="section-3" class="category-section">
+        <h2>حووشي</h2>
+        <div class="search-bar">
+            <input type="text" id="search-3" placeholder=" ابحث عن الحووشي . . .">
+            <button id="search-btn-3">🔍</button>
+        </div>
+        <div class="product-scroll" id="category-3"></div>
+</section>
+
+<section id="section-4" class="category-section">
+            <h2>جمبري</h2>
+            <div class="search-bar">
+                <input type="text" id="search-4" placeholder=" ابحث عن اكله جمبري . . .">
+                <button id="search-btn-4">🔍</button>
+            </div>
+            <div class="product-scroll" id="category-4"></div>
+</section>
+
+<section id="random-meal-scroll">
+
+    <div class="random-meal">
+        <h2 id="random-meal-title">اخترلي</h2>
+        <label for="random-meal-count">عدد الوجبات العشوائية:</label>
+        <input type="number" id="random-meal-count" min="1" max="10">
+        <button id="random-meal-btn">اختر لي وجبة</button>
+        <div id="random-meal-container" class="product-scroll"></div>
+
+    </div>
+    </section>
+
+<section id="recipes-section">
+    <h2>وصفات الأكلات</h2>
+<div id="recipe-search-container">
+    <input type="text" id="recipe-search" placeholder="ابحث عن وصفة...">
+    <button id="recipe-search-btn">🔍</button>
+</div>
+    <div id="recipe-buttons-container">
+        <div id="recipe-buttons" class="scroll-container"></div>
+    </div>
+    <div id="recipe-details"></div>
+</section>
+
+ <section id="cart">
+        <h2>الشيك</h2>
+        <ul id="cart-items"></ul>
+        <h3 id="cart-total">الإجمالي: 0 جنيه</h3>
+        <button onclick="showConfirmationForm()">تأكيد الشيك</button>
+
+        <div id="confirmation-message" style="display: none;"></div>
+        <div id="error-message" style="display: none;"></div>
+
+        <div id="confirmation-section" style="display: none;">
+            <h3>تأكيد الشيك</h3>
+            <label>الاسم</label>
+            <input type="text" id="customer-name" placeholder="أدخل اسمك">
+            <br>
+            <label>رقم الهاتف</label>
+            <input type="text" id="customer-phone" placeholder="أدخل رقم هاتفك">
+            <br>
+            <label>رسالة</label>
+            <textarea id="customer-message" placeholder="أضف رسالة"></textarea>
+            <br>
+            <button onclick="sendConfirmation()">إرسال</button>
+        </div>
+    </section>
+
+    <footer>
+        <h1>نورتم</h1>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

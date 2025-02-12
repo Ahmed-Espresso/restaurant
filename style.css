@@ -1,0 +1,724 @@
+/* تعيين الخطوط والألوان العامة */
+body {
+    font-family: Arial, 'Tajawal' , sans-serif;
+    background-color: #111;
+    background-color: black;
+    color: #ffd700; /* أصفر مشع */
+    margin: 0;
+    padding: 0;
+    direction:rtl;
+    box-sizing: border-box;
+}
+
+/* ====== الهيدر ====== */
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #2A2A1F 0%, #1A1A1F 100%);
+    position: relative;
+    justify-content: center; 
+}
+
+.header-logo {
+    height: 100px; /* تعديل الحجم حسب الحاجة */
+    position: absolute;
+    left: 10px; /* يضع الصورة في أقصى اليسار */
+    top: 50%;
+    transform: translateY(-50%); /* يجعلها في منتصف الهيدر */
+    margin-right: 20px; /* يعطي مسافة بين الصورة والعنوان */
+}
+.header-logo2 {
+    height: 100px; /* تعديل الحجم حسب الحاجة */
+    position: absolute;
+    right: 10px; /* يضع الصورة في أقصى اليسار */
+    top: 50%;
+    transform: translateY(-50%); /* يجعلها في منتصف الهيدر */
+    margin-left: 20px; /* يعطي مسافة بين الصورة والعنوان */
+}
+
+.header-title {
+    flex: 1; /* يأخذ المساحة المتبقية بعد الصورة */
+    text-align: center; /* توسيط النص داخل المساحة المتبقية */
+    margin: 0;
+    font-size: 24px;
+}
+
+/* ====== الفوتر ====== */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(135deg, #2A2A1F 0%, #1A1A1F 100%);
+    position: relative;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 15px #ffd700;
+    margin-top: 60px;
+}
+
+header h1 , footer h1 {
+    color: #ffd700;
+    font-size: 2rem;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from { text-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
+    to { text-shadow: 0 0 25px rgba(255, 215, 0, 1.4); }
+}
+
+/* ====== النافبار مع التمرير الجانبي ====== */
+#navbar {
+    padding: 5px;
+    box-shadow: 0 2px 2px #ffd700;
+    overflow-x: auto; /* السماح بالتمرير الجانبي */
+    white-space: nowrap; /* إبقاء العناصر في سطر واحد */
+    display: flex;
+    scrollbar-width: none; /* إخفاء شريط التمرير */
+    flex-wrap: nowrap;
+    background: rgba(40, 40, 30, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    z-index:1000;
+    margin-bottom: 50px;
+  
+}
+
+/* إخفاء شريط التمرير في المتصفحات المختلفة */
+#navbar::-webkit-scrollbar {
+    display: none;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;  
+}
+
+#navbar ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* ====== تأثير السحب بالماوس أو اللمس ====== */
+#navbar {
+    cursor: grab;
+}
+
+#navbar:active {
+    cursor: grabbing;
+}
+
+#navbar a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 2px solid #ffd700;
+    display: inline-block;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+}
+
+#navbar a:hover {
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+    background-color: #FFA000;
+    color: #ffd700;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+.product-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+
+.product-scroll::-webkit-scrollbar-thumb {
+    background-color: #FFD700;
+    border-radius: 20px;
+}
+section h2 , .random-meal h2 {
+    margin: 30px ;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700;
+    font-size: 1.8rem;
+    margin-right: 35px;
+}
+
+section {
+    margin-bottom: 70px;
+}
+
+/* ====== حقول البحث ====== */
+.search-bar input , #recipe-search-container input {
+    width: 60%;
+    padding: 10px;
+    background-color: #000;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: right;
+    flex: 1;
+    border: 1px solid #FFD700;
+    border-radius: 15px;
+    background-color:rgba(0,0,0,0.6);
+    color: #FFD700;
+}
+
+.search-bar input::placeholder {
+    color: #ffd700;
+    opacity: 0.7;
+}
+
+.search-bar button , #recipe-search-container button {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-left: 5px;
+    background-color: #FFD700;
+    text-shadow: 2px 2px 4px black;
+    color: white;
+    border-radius: 15px 0px 0px 15px ;
+    cursor: pointer;
+    position: absolute;
+    left: -5px; /* يحدد موقع الزر داخل الحقل */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 1px solid #ffd700;
+    display: inline-block;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+}
+
+.search-bar button:hover {
+    transition: all 0.3s ease;
+    background-color: #FFA000;
+    color: #ffd700;
+    box-shadow: 0 0 10px #ffd700;
+}
+
+.search-bar input:focus ,  #recipe-search:focus {
+    outline: 1px solid #FFD700;
+    box-shadow: 0 0 2px #ffd700;
+}
+.search-bar input:hover {
+    outline: 2px solid #FFD700;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px #ffd700;
+}
+.search-bar , #recipe-search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    overflow: hidden; /* يضمن أن الحواف تبقى مستديرة */
+    margin: auto; /* يجعل العنصر في المنتصف */
+}
+
+/* ====== صندوق البحث عن الوصفات ====== */
+#recipe-search-btn:hover {
+    background-color: #FFA000;
+    color: black;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+/* ====== التمرير الأفقي للمنتجات ====== */
+.product-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    direction:rtl ;
+    text-align:right;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFD700;
+}
+
+#snackbar {
+    background: #FFA000;
+}
+
+/* ====== تصميم كل منتج داخل السكرول ====== */
+.item {
+    flex-shrink: 0;
+    position: relative;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3); /* ظل أصفر */
+    transform: scale(0.95);
+    transition: all 1.2s ease;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: 150px;
+    height: auto;
+    background: linear-gradient(135deg, #2A2A1F 0%, #1A1A1F 100%);
+}
+
+/* ====== معلومات المنتج ====== */
+.product-info {
+    flex: 0 0 20%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    background: linear-gradient(135deg, #2A2A1F 0%, #1A1A1F 100%);
+    width: 100%;
+    height: 100%;
+    color: #ffd700;
+    transition: color 0.3s ease-in-out;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center; /* توسيط العناصر أفقيًا */
+    justify-content: center; /* توسيط العناصر عموديًا */
+}
+
+/* ====== اسم المنتج والسعر ====== */
+.product-name-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    flex: 1;
+    overflow: hidden;
+    pointer-events: none;
+    border-radius: 10px;
+    height: 80%;
+}
+
+.product-name,
+.product-price {
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 0;
+    color: #ffd700;
+    background: linear-gradient(135deg, #2A2A1F 0%, #1A1A1F 100%);
+}
+
+/* ====== زر المنتج ====== */
+.product-button { 
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 2px solid #ffd700;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.product-button:hover {
+   background-color: #FFA000;
+   color: #ffd700;
+   box-shadow: 0 0 15px #ffd700;
+   transition: all 0.3s ease;
+}
+
+/* ====== صورة المنتج ====== */
+.product-image-container {
+    width: 100%;
+    padding-top: 0;
+    background-color: transparent;
+    flex: 0 0 80%;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+    cursor: grab;
+}
+
+.product-image-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+/* ====== حاوية المنتجات ====== */
+.product-container {
+    width: 135px;
+    height: 135px;
+    position: absolute;
+    top: -90px;
+    right: -90px;
+    border-radius: 0px 0px 200px 200px;
+    transition: all 0.5s, border-radius 2s, top 1s;
+    overflow: hidden;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    color:#FFD700;
+    background: linear-gradient(135deg, #2A2A1F 0%, #1A1A1F 100%);
+    box-shadow: 0 0 0 5px #FFD700; 
+    background: linear-gradient(135deg, rgba(42, 42, 31, 0.8) 0%, rgba(26, 26, 31, 0.2) 100%);
+}
+
+.product-container .icon {
+    position: absolute;
+    right: 85px;
+    top: 85px;
+    color: #ffd700;
+    opacity: 1;
+    color:#FFD700;
+}
+
+.product-container:hover {
+    width: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    height: 73%;
+    color:#FFD700;
+}
+
+.product-container:hover .icon {
+    opacity: 0;
+    right: 10px;
+    top: 10px;
+}
+
+.product-container:hover .contents {
+    opacity: 1;
+    transform: translateY(0);
+    color:#FFD700;
+}
+
+.product-container .contents {
+    padding: 0 15px;
+    opacity: 0;
+    transform: scale(0.5);
+    transform: translateY(-200%);
+    transition: opacity 0.2s, transform 0.8s;
+    color: black;
+    text-align: right;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    overflow: hidden;
+    color:#FFD700;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ====== قسم "اختر لي وجبة" ====== */
+.random-meal {
+    text-align: center;
+    background-color: #222;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ffd700;
+    margin-top: 60px;
+}
+
+.random-meal label {
+    font-size: 1.2rem;
+}
+
+.random-meal input {
+    padding: 8px;
+    width: 60px;
+    text-align: center;
+    background-color: #000;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.random-meal input:focus{
+    outline: 1px solid #FFD700;
+    box-shadow: 0 0 2px #ffd700;
+}
+
+.random-meal button {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 2px solid #ffd700;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+.random-meal button:hover {
+    background-color: #FFA000;
+    color: #ffd700;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+/* ====== قسم وصفات الأكلات ====== */
+#recipes-section {
+    background-color: #222;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding: 5px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ffd700;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#recipes-section h2 {
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700;
+    font-size: 1.8rem;
+}
+
+#recipes-section ::-webkit-scrollbar {
+    height: 5px;
+}
+
+#recipes-section ::-webkit-scrollbar-thumb {
+    background-color: #FFD700;
+    border-radius: 20px;
+}
+
+/* ====== شريط تمرير الوصفات (أزرار) ====== */
+#recipe-buttons-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.recipe-button {
+    margin: 5px;
+    cursor: pointer;
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 2px solid #ffd700;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+}
+
+.recipe-button:hover {
+    background-color: #ffd700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    background-color: #FFA000;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+/* ====== تفاصيل الوصفة ====== */
+#recipe-details {
+    background-color: #111;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ffd700;
+    text-align: center;
+    display: none; /* يتم إظهاره عند اختيار وصفة */
+}
+
+#recipe-details h3 {
+    color: #ffd700;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+#recipe-details p {
+    color: #ffd700;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 10px;
+}
+
+#recipe-details .close-btn {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+#recipe-details .close-btn:hover {
+    background-color: #FFA000;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+/* ====== السلة وتأكيد الطلب ====== */
+#cart {
+    background-color: #222;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffd700;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#cart h2, #cart h3 {
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    font-size: 17px;
+}
+
+#cart-items li {
+    background-color: #333;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    margin-top: 8px;
+}
+
+#cart-total {
+    font-size: 1.2rem;
+}
+
+#cart button {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 2px solid #ffd700;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+#cart button:hover {
+    background-color: #FFA000;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+/* ====== قسم تأكيد السلة ====== */
+#confirmation-section {
+    background-color: #111;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffd700;
+}
+
+#confirmation-section h3 {
+    color: #ffd700;
+}
+
+#confirmation-section label {
+    display: block;
+    color: #ffd700;
+    margin-top: 10px;
+}
+
+#confirmation-section input,
+#confirmation-section textarea {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #000;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+}
+
+#confirmation-section input:focus,
+#confirmation-section textarea:focus {
+    outline: 2px solid #FFD700;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 2px #ffd700;
+}
+#confirmation-section button {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 2px solid #ffd700;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+}
+
+#confirmation-section button:hover {
+    background-color: #FFA000;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+#confirmation-message {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    z-index: 1000;
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 2px solid #ffd700;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #3A3A2F, #2A2A1F);
+    white-space: nowrap;
+}
